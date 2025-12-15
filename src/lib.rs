@@ -58,12 +58,12 @@ impl Plugin for GamePlugin {
             MenuPlugin,
             ActionsPlugin,
             InternalAudioPlugin,
+            CivilizationPlugin
         ));
 
         #[cfg(debug_assertions)]
         {
             app.add_plugins((
-                FrameTimeDiagnosticsPlugin::default(),
                 LogDiagnosticsPlugin::default(),
             ));
         }
