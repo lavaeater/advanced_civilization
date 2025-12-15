@@ -1,13 +1,13 @@
 // disable console on windows for release builds
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+use advanced_civilization::GamePlugin; // ToDo: Replace advanced_civilization with your new crate name.
 use bevy::asset::AssetMetaCheck;
 use bevy::ecs::system::NonSendMarker;
 use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
 use bevy::winit::WINIT_WINDOWS;
 use bevy::DefaultPlugins;
-use advanced_civilization::GamePlugin; // ToDo: Replace advanced_civilization with your new crate name.
 use std::io::Cursor;
 use winit::window::Icon;
 
@@ -26,6 +26,11 @@ fn main() {
                         prevent_default_event_handling: false,
                         ..default()
                     }),
+                    ..default()
+                })
+                .set(bevy::log::LogPlugin {
+                    level: bevy::log::Level::DEBUG,
+                    filter: "wgpu=warn,bevy_ecs=info".to_string(),
                     ..default()
                 })
                 .set(AssetPlugin {
