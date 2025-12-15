@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 use bevy::window::WindowMode;
 use bevy::winit::WinitSettings;
-use bevy_game::GamePlugin; // ToDo: Replace bevy_game with your new crate name.
+use advanced_civilization::GamePlugin; // ToDo: Replace advanced_civilization with your new crate name.
 
 #[unsafe(no_mangle)]
 unsafe extern "C" fn main_rs() {

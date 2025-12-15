@@ -1,0 +1,214 @@
+(
+    trading_cards: [
+        (
+            value: 1,
+            card_type: CommodityCard(Ochre),
+            tradeable: true,
+            number: 7,
+            color: "#a58563"
+        ),
+        (
+            value: 1,
+            card_type: CommodityCard(Hides),
+            tradeable: true,
+            number: 7,
+            color: "#d9623b"
+        ),
+        (
+            value: 2,
+            card_type: CommodityCard(Iron),
+            tradeable: true,
+            number: 8,
+            color: "#e8bd45"
+        ),
+        (
+            value: 2,
+            card_type: CommodityCard(Papyrus),
+            tradeable: true,
+            number: 7,
+            color: "#f96714"
+        ),
+        (
+            value: 3,
+            card_type: CommodityCard(Salt),
+            tradeable: true,
+            number: 9,
+            color: "#fea166"
+        ),
+        (
+            value: 3,
+            card_type: CommodityCard(Timber),
+            tradeable: true,
+            number: 8,
+            color: "#55ff00"
+        ),
+        (
+            value: 4,
+            card_type: CommodityCard(Grain),
+            tradeable: true,
+            number: 8,
+            color: "#728791"
+        ),
+        (
+            value: 4,
+            card_type: CommodityCard(Oil),
+            tradeable: true,
+            number: 7,
+            color: "#4a79ba"
+        ),
+        (
+            value: 5,
+            card_type: CommodityCard(Cloth),
+            tradeable: true,
+            number: 7,
+            color: "#442288"
+        ),
+        (
+            value: 5,
+            card_type: CommodityCard(Wine),
+            tradeable: true,
+            number: 6,
+            color: "#a15589"
+        ),
+        (
+            value: 6,
+            card_type: CommodityCard(Bronze),
+            tradeable: true,
+            number: 6,
+            color: "#993c7c"
+        ),
+        (
+            value: 6,
+            card_type: CommodityCard(Silver),
+            tradeable: true,
+            number: 5,
+            color: "#20392c"
+        ),
+        (
+            value: 7,
+            card_type: CommodityCard(Spices),
+            tradeable: true,
+            number: 6,
+            color: "#2c4641"
+        ),
+        (
+            value: 7,
+            card_type: CommodityCard(Resin),
+            tradeable: true,
+            number: 5,
+            color: "#221166"
+        ),
+        (
+            value: 8,
+            card_type: CommodityCard(Gems),
+            tradeable: true,
+            number: 5,
+            color: "#4d5051"
+        ),
+        (
+            value: 8,
+            card_type: CommodityCard(Dye),
+            tradeable: true,
+            number: 4,
+            color: "#5c4e44"
+        ),
+        (
+            value: 9,
+            card_type: CommodityCard(Gold),
+            tradeable: true,
+            number: 5,
+            color: "#535e63"
+        ),
+        (
+            value: 9,
+            card_type: CommodityCard(Ivory),
+            tradeable: true,
+            number: 4,
+            color: "#bfb5a2"
+        ),
+        (
+            value: 2,
+            card_type: CalamityCard(VolcanoEarthquake),
+            tradeable: false,
+            number: 1,
+            color: "#9a0022"
+        ),
+        (
+            value: 2,
+            card_type: CalamityCard(Treachery),
+            tradeable: true,
+            number: 1,
+            color: "#9a0022"
+        ),
+        (
+            value: 3,
+            card_type: CalamityCard(Famine),
+            tradeable: false,
+            number: 1,
+            color: "#9a0022"
+        ),
+        (
+            value: 3,
+            card_type: CalamityCard(Superstition),
+            tradeable: true,
+            number: 1,
+            color: "#9a0022"
+        ),
+        (
+            value: 4,
+            card_type: CalamityCard(CivilWar),
+            tradeable: false,
+            number: 1,
+            color: "#9a0022"
+        ),
+        (
+            value: 4,
+            card_type: CalamityCard(SlaveRevolt),
+            tradeable: true,
+            number: 1,
+            color: "#9a0022"
+        ),
+        (
+            value: 5,
+            card_type: CalamityCard(Flood),
+            tradeable: false,
+            number: 1,
+            color: "#9a0022"
+        ),
+        (
+            value: 5,
+            card_type: CalamityCard(BarbarianHordes),
+            tradeable: true,
+            number: 1,
+            color: "#9a0022"
+        ),
+        (
+            value: 6,
+            card_type: CalamityCard(Epidemic),
+            tradeable: true,
+            number: 1,
+            color: "#9a0022"
+        ),
+        (
+            value: 7,
+            card_type: CalamityCard(CivilDisorder),
+            tradeable: true,
+            number: 1,
+            color: "#9a0022"
+        ),
+        (
+            value: 8,
+            card_type: CalamityCard(IconoclasmAndHeresy),
+            tradeable: true,
+            number: 1,
+            color: "#9a0022"
+        ),
+        (
+            value: 9,
+            card_type: CalamityCard(Piracy),
+            tradeable: true,
+            number: 1,
+            color: "#9a0022"
+        ),
+    ]
+)

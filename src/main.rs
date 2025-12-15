@@ -7,7 +7,7 @@ use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
 use bevy::winit::WINIT_WINDOWS;
 use bevy::DefaultPlugins;
-use bevy_game::GamePlugin; // ToDo: Replace bevy_game with your new crate name.
+use advanced_civilization::GamePlugin; // ToDo: Replace advanced_civilization with your new crate name.
 use std::io::Cursor;
 use winit::window::Icon;
 
