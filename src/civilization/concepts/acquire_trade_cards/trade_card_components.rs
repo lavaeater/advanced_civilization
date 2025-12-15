@@ -12,6 +12,18 @@ pub struct CivilizationTradeCards {
 }
 
 impl CivilizationTradeCards {
+    pub fn new() -> Self {
+        let mut cards: HashMap<usize, Vec<TradeCard>> = HashMap::new();
+        for trade_card in TradeCard::iter() {
+            cards
+                .entry(trade_card.value())
+                .or_insert_with(Vec::new)
+                .extend(vec![trade_card; trade_card.number_of_cards()]);
+        }
+        Self {
+            card_piles: cards,
+        }
+    }
     pub fn pull_card_from(&mut self, pile: usize) -> Option<TradeCard> {
         if let Some(p) = self.card_piles.get_mut(&pile) {
             p.pop()

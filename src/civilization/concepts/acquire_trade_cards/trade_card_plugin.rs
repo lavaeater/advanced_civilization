@@ -6,12 +6,14 @@ use crate::civilization::concepts::acquire_trade_cards::trade_card_systems::{
 };
 use crate::GameActivity;
 use bevy::prelude::{in_state, App, IntoScheduleConfigs, OnEnter, Plugin, Update};
+use crate::civilization::concepts::acquire_trade_cards::trade_card_components::CivilizationTradeCards;
 
 pub struct TradeCardPlugin;
 
 impl Plugin for TradeCardPlugin {
     fn build(&self, app: &mut App) {
         app
+            .insert_resource(CivilizationTradeCards::new())
         .add_message::<CheckIfWeCanTrade>()
         .add_message::<HumanPlayerTradeCardsUpdated>()
         .add_systems(
