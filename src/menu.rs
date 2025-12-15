@@ -1,6 +1,7 @@
 use crate::loading::TextureAssets;
 use crate::GameState;
 use bevy::prelude::*;
+use crate::civilization::components::GameCamera;
 
 pub struct MenuPlugin;
 
@@ -34,7 +35,12 @@ struct Menu;
 
 fn setup_menu(mut commands: Commands, textures: Res<TextureAssets>) {
     info!("menu");
-    commands.spawn((Camera2d, Msaa::Off));
+    commands.spawn((
+        Camera2d,
+        IsDefaultUiCamera,
+        Projection::Orthographic(OrthographicProjection::default_2d()),
+        GameCamera,
+        Msaa::Off,));
     commands
         .spawn((
             Node {
