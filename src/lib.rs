@@ -5,6 +5,8 @@ mod audio;
 mod loading;
 mod menu;
 mod player;
+mod civilization;
+mod stupid_ai;
 
 use crate::actions::ActionsPlugin;
 use crate::audio::InternalAudioPlugin;
@@ -16,19 +18,35 @@ use bevy::app::App;
 #[cfg(debug_assertions)]
 use bevy::diagnostic::{FrameTimeDiagnosticsPlugin, LogDiagnosticsPlugin};
 use bevy::prelude::*;
+use civilization::plugins::civilization_plugin::CivilizationPlugin;
 
-// This example game uses States to separate logic
-// See https://bevy-cheatbook.github.io/programming/states.html
-// Or https://github.com/bevyengine/bevy/blob/main/examples/ecs/state.rs
 #[derive(States, Default, Clone, Eq, PartialEq, Debug, Hash)]
-enum GameState {
-    // During the loading State the LoadingPlugin will load our assets
+pub enum GameState {
     #[default]
     Loading,
-    // During this State the actual game logic is executed
     Playing,
-    // Here the menu is drawn and waiting for player interaction
     Menu,
+}
+
+#[derive(SubStates, Clone, PartialEq, Eq, Hash, Debug, Default, Reflect)]
+#[source(GameState = GameState::Playing)]
+pub enum GameActivity {
+    #[default]
+    StartGame,
+    // CollectTaxes,
+    PopulationExpansion,
+    Census,
+    // ShipConstruction,
+    Movement,
+    Conflict,
+    CityConstruction,
+    RemoveSurplusPopulation,
+    CheckCitySupport,
+    AcquireTradeCards,
+    Trade,
+    // ResolveCalamities,
+    // AcquireCivilizationCards,
+    // MoveSuccessionMarkers,
 }
 
 pub struct GamePlugin;
@@ -40,7 +58,6 @@ impl Plugin for GamePlugin {
             MenuPlugin,
             ActionsPlugin,
             InternalAudioPlugin,
-            PlayerPlugin,
         ));
 
         #[cfg(debug_assertions)]

@@ -1,6 +1,6 @@
+use crate::GameState;
 use crate::actions::Actions;
 use crate::loading::TextureAssets;
-use crate::GameState;
 use bevy::prelude::*;
 
 pub struct PlayerPlugin;
@@ -18,11 +18,15 @@ impl Plugin for PlayerPlugin {
 }
 
 fn spawn_player(mut commands: Commands, textures: Res<TextureAssets>) {
-    commands.spawn((
-        Sprite::from_image(textures.bevy.clone()),
-        Transform::from_translation(Vec3::new(0., 0., 1.)),
-        Player,
-    ));
+    commands
+        .spawn((
+            Sprite {
+                image: textures.bevy.clone(),
+                ..Default::default()
+            },
+            Transform::from_translation(Vec3::new(0., 0., 1.)),
+        ))
+        .insert(Player);
 }
 
 fn move_player(
@@ -30,13 +34,13 @@ fn move_player(
     actions: Res<Actions>,
     mut player_query: Query<&mut Transform, With<Player>>,
 ) {
-    let Some(movement) = actions.player_movement else {
+    if actions.player_movement.is_none() {
         return;
-    };
+    }
     let speed = 150.;
     let movement = Vec3::new(
-        movement.x * speed * time.delta_secs(),
-        movement.y * speed * time.delta_secs(),
+        actions.player_movement.unwrap().x * speed * time.delta_secs(),
+        actions.player_movement.unwrap().y * speed * time.delta_secs(),
         0.,
     );
     for mut player_transform in &mut player_query {

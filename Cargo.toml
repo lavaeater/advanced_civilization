@@ -99,6 +99,11 @@ winit = { version = "0.30", default-features = false }
 image = { version = "0.25.9", default-features = false }
 ## This greatly improves WGPU's performance due to its heavy use of trace! calls
 log = { version = "0.4.29", features = ["max_level_debug", "release_max_level_warn"] }
+itertools = "0.14.0"
+serde_json = { version = "1.0.145" }
+serde = { version = "1.0.228", features = ["derive"] }
+bevy_common_assets = { version = "0.14.0", features = ["ron"] }
+
 
 [build-dependencies]
 embed-resource = "1"
